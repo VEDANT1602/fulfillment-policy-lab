@@ -1,0 +1,154 @@
+{
+  "experiment": "independent synthetic fulfillment offer simulation; not a workplace result",
+  "seed": 1602,
+  "events": 9600,
+  "split_events": {
+    "train": 4800,
+    "validation": 2400,
+    "test": 2400
+  },
+  "split_groups": {
+    "train": 120,
+    "validation": 60,
+    "test": 60
+  },
+  "selected_policy": "modest_offer",
+  "selection_frozen_before_test": true,
+  "reward": "completion indicator minus fixed normalized incentive cost; arbitrary utility units, not dollars",
+  "features": [
+    "distance_km",
+    "basket_items",
+    "backlog",
+    "hour_sin",
+    "hour_cos",
+    "store_friction"
+  ],
+  "reward_model": "HistGradientBoostingRegressor: 80 iterations, 15 leaves, L2=3, minimum leaf=25",
+  "crossfit": "four validation group folds with historical train groups always available; final nuisance model fits train+validation only",
+  "bootstrap": {
+    "unit": "zone-day",
+    "repetitions": 1000,
+    "seed": 42,
+    "type": "paired percentile cluster bootstrap with fixed fitted nuisance; not selection-adjusted"
+  },
+  "test": {
+    "no_incentive": {
+      "ips": 0.5029761904761906,
+      "snips": 0.5032757593805838,
+      "clipped_ips": 0.5029761904761906,
+      "dr": 0.5021314281414673,
+      "diagnostics": {
+        "ess": 1159.6219662690262,
+        "max_possible_weight": 2.857142857142857,
+        "matched_events": 1303,
+        "weight_sum_per_event": 0.9994047619047618,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.4660914446836158,
+        0.5431329936985474
+      ]
+    },
+    "modest_offer": {
+      "ips": 0.6824933574879226,
+      "snips": 0.6535770461467288,
+      "clipped_ips": 0.6824933574879226,
+      "dr": 0.6554339634486472,
+      "diagnostics": {
+        "ess": 749.6256182058634,
+        "max_possible_weight": 4.3478260869565215,
+        "matched_events": 837,
+        "weight_sum_per_event": 1.044243156199678,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.6128979540429494,
+        0.696727451975753
+      ]
+    },
+    "high_offer": {
+      "ips": 0.5656666666666667,
+      "snips": 0.7028994082840235,
+      "clipped_ips": 0.3804166666666666,
+      "dr": 0.6959851869047431,
+      "diagnostics": {
+        "ess": 199.72727272727275,
+        "max_possible_weight": 14.285714285714285,
+        "matched_events": 260,
+        "weight_sum_per_event": 0.8047619047619048,
+        "clip": 5.0,
+        "clipped_fraction": 0.028333333333333332
+      },
+      "dr_cluster_ci_95": [
+        0.6533340835244794,
+        0.737717062466519
+      ]
+    },
+    "load_sensitive": {
+      "ips": 0.6489600730388774,
+      "snips": 0.677740054205425,
+      "clipped_ips": 0.6489600730388774,
+      "dr": 0.68073670260221,
+      "diagnostics": {
+        "ess": 626.3552193164975,
+        "max_possible_weight": 5.0,
+        "matched_events": 793,
+        "weight_sum_per_event": 0.9575353692201518,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.6438980467303298,
+        0.7168213296436348
+      ]
+    },
+    "distance_sensitive": {
+      "ips": 0.6416982832988267,
+      "snips": 0.6426027981069511,
+      "clipped_ips": 0.5737191166321601,
+      "dr": 0.6387870039082828,
+      "diagnostics": {
+        "ess": 484.00382524573024,
+        "max_possible_weight": 14.285714285714285,
+        "matched_events": 807,
+        "weight_sum_per_event": 0.9985924200598113,
+        "clip": 5.0,
+        "clipped_fraction": 0.01125
+      },
+      "dr_cluster_ci_95": [
+        0.5947140369088099,
+        0.6823679679140303
+      ]
+    }
+  },
+  "selected_vs_no_incentive": {
+    "dr_difference": 0.15330253530717997,
+    "dr_difference_cluster_ci_95": [
+      0.10706538861374322,
+      0.19457179253153387
+    ]
+  },
+  "unsupported_policy": {
+    "status": "refused",
+    "reason": "target assigns mass to an action with zero logging probability",
+    "estimate": null
+  },
+  "oracle_diagnostic_only": {
+    "expected_utility": {
+      "no_incentive": 0.5020797815487672,
+      "modest_offer": 0.6717669533965346,
+      "high_offer": 0.7055838169788005,
+      "load_sensitive": 0.6787871226309733,
+      "distance_sensitive": 0.6519024651280639
+    },
+    "selected_policy_abs_dr_error": 0.016332989947887344,
+    "used_for_training_or_selection": false
+  },
+  "versions": {
+    "python": "3.11.9",
+    "numpy": "1.26.0",
+    "sklearn": "1.3.0"
+  }
+}

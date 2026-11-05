@@ -1,0 +1,105 @@
+{
+  "selected_policy": "modest_offer",
+  "criterion": "highest validation DR point estimate among five predefined supported policies",
+  "candidate_policies": [
+    "no_incentive",
+    "modest_offer",
+    "high_offer",
+    "load_sensitive",
+    "distance_sensitive"
+  ],
+  "test_outcomes_used": false,
+  "oracle_used": false,
+  "results": {
+    "no_incentive": {
+      "ips": 0.530952380952381,
+      "snips": 0.5135290731145653,
+      "clipped_ips": 0.530952380952381,
+      "dr": 0.5177572188362445,
+      "diagnostics": {
+        "ess": 1187.3943329397882,
+        "max_possible_weight": 2.857142857142857,
+        "matched_events": 1335,
+        "weight_sum_per_event": 1.0339285714285715,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.48689143733379103,
+        0.5491591951343321
+      ]
+    },
+    "modest_offer": {
+      "ips": 0.7003800322061191,
+      "snips": 0.7184274859596961,
+      "clipped_ips": 0.7003800322061191,
+      "dr": 0.7147758512583129,
+      "diagnostics": {
+        "ess": 685.1054690238193,
+        "max_possible_weight": 4.3478260869565215,
+        "matched_events": 764,
+        "weight_sum_per_event": 0.97487922705314,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.679194590693945,
+        0.7481603412299234
+      ]
+    },
+    "high_offer": {
+      "ips": 0.7039851190476191,
+      "snips": 0.710540702913788,
+      "clipped_ips": 0.4581458333333334,
+      "dr": 0.7119759490631523,
+      "diagnostics": {
+        "ess": 232.12284523385622,
+        "max_possible_weight": 14.285714285714285,
+        "matched_events": 301,
+        "weight_sum_per_event": 0.9907738095238094,
+        "clip": 5.0,
+        "clipped_fraction": 0.03916666666666667
+      },
+      "dr_cluster_ci_95": [
+        0.6628540077483626,
+        0.7599108063234448
+      ]
+    },
+    "load_sensitive": {
+      "ips": 0.6984970238095238,
+      "snips": 0.701781326515135,
+      "clipped_ips": 0.6984970238095238,
+      "dr": 0.7032607285276911,
+      "diagnostics": {
+        "ess": 636.5399930964031,
+        "max_possible_weight": 5.0,
+        "matched_events": 806,
+        "weight_sum_per_event": 0.9953200483091788,
+        "clip": 5.0,
+        "clipped_fraction": 0.0
+      },
+      "dr_cluster_ci_95": [
+        0.6674442064112075,
+        0.7393648316244742
+      ]
+    },
+    "distance_sensitive": {
+      "ips": 0.6907912928456407,
+      "snips": 0.6951208064954831,
+      "clipped_ips": 0.5897317690361169,
+      "dr": 0.6978889093297224,
+      "diagnostics": {
+        "ess": 444.68210983616643,
+        "max_possible_weight": 14.285714285714285,
+        "matched_events": 760,
+        "weight_sum_per_event": 0.9937715665976535,
+        "clip": 5.0,
+        "clipped_fraction": 0.013333333333333334
+      },
+      "dr_cluster_ci_95": [
+        0.6610779095379101,
+        0.7317496160852563
+      ]
+    }
+  }
+}

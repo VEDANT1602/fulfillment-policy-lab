@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "data/logged_offers.csv": "dafe54ce0c157e79fbbef70052e59a7227e7f7112c208f44c28738abf5f5ffc8",
+    "data/oracle_diagnostic_only.csv": "8074e3d02f314d73e8b455dc8c9e86265cb5737cc506be1f4d497532942b4d93",
+    "models/reward_model.pkl": "61b0ff7aee0983393f05264a684bf4ebf0e283dfaf4aad533e51c74297c7c09b",
+    "results/selection.json": "63723305aa869e094aa001111dc3885e34a8520994a02b23027cbf7b5b0bf049",
+    "results/test_scores.csv": "1742278f2069305d20034de73c03a366f75bfa98b990a107f4c242cd88334799",
+    "results/metrics.json": "df539361b9cccdc5cd4fc1b79bd304d4d225f084fda6e6839b46860a388295d7",
+    "results/crossfit_audit.json": "1cda474175426a1c08b7f15154794e73b86075fceaaacdacb57e9e4099a38376"
+  },
+  "source_sha256": {
+    "src/fulfillment_policy/__init__.py": "bc4aae995b169c20ea27baf22b7398aa1e020acf9a69dc21b86552d5635c56e0",
+    "src/fulfillment_policy/data.py": "1be8066dcd32c6fa7487c1e436aaefbb12fcd1501e1334c571de66fb32e0e85a",
+    "src/fulfillment_policy/evaluation.py": "4cca9eecf429d25328e0f908a9cda4524d51f36aaa121b9927a747b9cbaf77e2",
+    "src/fulfillment_policy/model.py": "407287508fd472d1711eddd961e1ab099446e9e99e8612407ff746b4632be124",
+    "scripts/run.py": "649ec561cc7cb77d8a9f4370818b8483a8c259efd76acd2a04e974fc67801d2e"
+  }
+}
