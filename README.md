@@ -1,14 +1,10 @@
 # Fulfillment Policy Lab
 
-**A policy can look better offline because the logging policy gave it an easier sample. I built this lab to make that failure visible before an incentive policy reaches a trial.**
+A marketplace observes the outcome only for the offer it sends. With 9,600 fictional offers across 240 zone-days, this experiment tests how far those partial observations support a different offer policy.
 
-The decision is narrow: which shopper offer should a fictional grocery marketplace show for an order? The outcome is completion minus a fixed, normalized incentive cost. Only the chosen offer's outcome is observed. A conventional supervised comparison of completed orders by offer confuses context, exploration rates, and policy quality.
+The policy chosen on validation had expected test utility of 0.6718 in the simulator. A different predefined policy reached 0.7056. The oracle values were opened for diagnosis after selection. The selection record and event scores make it possible to check that ordering. [Frozen selection](results/selection.json) · [Cross-fitting audit](results/crossfit_audit.json) · [Test scores](results/test_scores.csv)
 
-This is an original, independently built portfolio experiment using **9,600 synthetic offers across 240 zone-days**. It demonstrates evaluation methods. It contains no employer, customer, or Instacart data and does not substantiate historical workplace results.
-
-## My approach
-
-I treated support as a contract before treating uplift as a number:
+## How offers enter the comparison
 
 1. **Record the decision.** Preserve the full randomized logging distribution, selected action, context, outcome, and zone-day identifier.
 2. **Refuse unsupported comparisons.** Check every target context/action pair for zero support and excessive importance ratios, then require effective sample size. Do not silently discard unsupported rows.
@@ -82,4 +78,4 @@ The next step would be a prospectively designed, adequately powered randomized m
 
 The estimators follow the definitions in [Dudik, Langford and Li, 2011](https://arxiv.org/abs/1103.4601), [Swaminathan and Joachims, 2015](https://proceedings.mlr.press/v37/swaminathan15.html), and [the self-normalized estimator paper](https://papers.nips.cc/paper/2015/hash/39027dfad5138c9ca0c474d71db915c3-Abstract.html). This implementation, simulator, contracts, and experiments are original; paper code was not copied.
 
-Built for Vedant Thaker's portfolio with AI-assisted implementation and review. [Provenance and scope](docs/provenance.md) describe the evidence boundary. MIT licensed.
+[Project provenance and experimental scope](docs/provenance.md) · [MIT license](LICENSE)
